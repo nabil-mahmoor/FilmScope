@@ -189,10 +189,6 @@ h1 i {
 }
 
 @media screen and (max-width: 600px) {
-  .app {
-    padding: 4rem 2rem;
-  }
-
   .search {
     padding: 1em 1.75rem;
     width: 100%;
@@ -209,16 +205,8 @@ h1 i {
 }
 
 @media screen and (max-width: 400px) {
-  .app {
-    padding: 4rem 1rem;
-  }
-
   h1 {
     font-size: 2rem;
-  }
-
-  .container {
-    margin-top: 2rem;
   }
 
   .movie {
