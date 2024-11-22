@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
+import API_KEY from "./apikey";
 import SearchIcon from './assets/search.svg'
 import './App.css';
 
 const DISCOVER_URL = 'https://api.themoviedb.org/3/discover/movie?';
 const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?query=';
-const API_KEY = 'api_key=11638f1fcc10907ee42fb361a47e5a7c';
 
 const App = () => {
 
@@ -25,38 +25,45 @@ const App = () => {
 
     return (
         <div className="app">
-            <h1>
-                <i class="fa-solid fa-camera-movie"></i>
-                FilmScope
-            </h1>
+            <header>
+                <h1>
+                    <i class="fa-light fa-clapperboard-play"></i>
+                    FilmScope
+                </h1>
+                <div className="search">
+                    <input
+                        placeholder="Search for movies"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <img
+                        src={SearchIcon}
+                        alt="search"
+                        onClick={() => searchMovies(searchTerm.replace(/\s/g, '+'))}
+                    />
+                </div>
+            </header>
 
-            <div className="search">
-                <input
-                    placeholder="Search for movies"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <img
-                    src={SearchIcon}
-                    alt="search"
-                    onClick={() => searchMovies(searchTerm.replace(/\s/g, '+'))}
-                />
+            <div className="content">
+                {
+                    movies?.length > 0
+                        ? (
+                            <div className="container">
+                                {movies.sort((a, b) => {
+                                    if ((a.vote_average > b.vote_average) && (a.release_date > b.release_date)) {
+                                        return -1;
+                                    }
+                                }).map((movie) => (
+                                    <MovieCard movie={movie} />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="empty">
+                                <h2>No movies found</h2>
+                            </div>
+                        )
+                }
             </div>
-
-            {
-                movies?.length > 0
-                    ? (
-                        <div className="container">
-                            {movies.map((movie) => (
-                                <MovieCard movie={movie} />
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="empty">
-                            <h2>No movies found</h2>
-                        </div>
-                    )
-            }
 
         </div>
     );
