@@ -1,8 +1,11 @@
-# React + Vite
+<center>
+<h1>FilmScope</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p style="font-size: 16px;">An easy-to-use web application that allows users to search, discover, and explore movies and TV shows.</p>
 
-Currently, two official plugins are available:
+<a href="https://filmscop.netlify.app/" style="font-size: 16px; padding: .5em 1rem; border: 3px solid #4493F1; border-radius: 3px; text-decoration: none;"><strong><big>➥ Live Demo</big></strong></a>
+</center>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo Screenshot
+
+![FilmScope](./src/demo/demo_screenshot.png)

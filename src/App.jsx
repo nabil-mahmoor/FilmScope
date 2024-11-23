@@ -26,10 +26,12 @@ const App = () => {
     return (
         <div className="app">
             <header>
-                <h1>
-                    <i class="fa-light fa-clapperboard-play"></i>
-                    FilmScope
-                </h1>
+                <a href="searchMovies('')" className="title">
+                    <h1>
+                        <i class="fa-light fa-clapperboard-play"></i>
+                        FilmScope
+                    </h1>
+                </a>
                 <div className="search">
                     <input
                         placeholder="Search for movies"
