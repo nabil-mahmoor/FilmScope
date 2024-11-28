@@ -52,7 +52,7 @@ const App = () => {
                         ? (
                             <div className="container">
                                 {movies.sort((a, b) => {
-                                    if ((a.vote_average > b.vote_average) && (a.release_date > b.release_date)) {
+                                    if ((a.vote_average > b.vote_average) && (a.release_date > b.release_date) || (a.release_date > b.release_date)) {
                                         return -1;
                                     }
                                 }).map((movie) => (
